@@ -40,8 +40,7 @@ namespace PasswordGenerator
         #endregion
         private void button2_Click(object sender, EventArgs e)
         {
-            GC.Collect();
-            tb_output.Clear();
+            Application.Exit();
         }
 
         #region Small Letter
