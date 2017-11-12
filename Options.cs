@@ -9,9 +9,9 @@ namespace PasswordGenerator
 {
     class Options
     {
-        // The Lenght of the Generated Password
-        private static byte _laenge = 12;
-        public static byte Laenge
+        // The Lenght of the Generated Password set to Default
+        private static int _laenge = 12;
+        public static int Laenge
         {
             get => _laenge;
             set

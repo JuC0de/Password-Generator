@@ -37,7 +37,6 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -136,7 +135,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.checkBox7);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.checkBox4);
@@ -153,15 +151,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Characters";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "max. 255";
             // 
             // checkBox7
             // 
@@ -228,11 +217,11 @@
             // tb_output_lenght
             // 
             this.tb_output_lenght.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_output_lenght.Location = new System.Drawing.Point(126, 139);
+            this.tb_output_lenght.Location = new System.Drawing.Point(160, 138);
             this.tb_output_lenght.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.tb_output_lenght.Name = "tb_output_lenght";
             this.tb_output_lenght.ReadOnly = true;
-            this.tb_output_lenght.Size = new System.Drawing.Size(30, 20);
+            this.tb_output_lenght.Size = new System.Drawing.Size(43, 20);
             this.tb_output_lenght.TabIndex = 4;
             this.tb_output_lenght.Text = "12";
             this.tb_output_lenght.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -387,6 +376,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(255, 330);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.tabControl1);
@@ -394,8 +384,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -435,7 +427,6 @@
         public System.Windows.Forms.TextBox tb_output_lenght;
         public System.Windows.Forms.TextBox tb_zeichen;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         public System.Windows.Forms.TextBox tb_output;
         public System.Windows.Forms.TabControl tabControl1;

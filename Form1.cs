@@ -24,18 +24,21 @@ namespace PasswordGenerator
 
 
             // The Lenght of the Generated Password
-            if (checkBox7.Checked)
-                Options.Laenge = Convert.ToByte(tb_output_lenght.Text);
-            else
-                Options.Laenge = Convert.ToByte(tb_output_lenght.Text);
-
-
-            // Final Generated Password
-            tb_output.Text = Options.CharGenerator(tb_zeichen.Text);
-
-
-            // The Statubs Bar
-            toolStripLabel1.Text = Options.StatusBar();
+            if ((checkBox7.Checked) || (!checkBox7.Checked))
+            {
+                var check = int.TryParse(tb_output_lenght.Text, out var outputLenght);
+                if (check)
+                {
+                    // Set Value for the Lenght of the Generated Password
+                    Options.Laenge = outputLenght;
+                    // Final Generated Password
+                    tb_output.Text = Options.CharGenerator(tb_zeichen.Text);
+                    // The Statubs Bar
+                    toolStripLabel1.Text = Options.StatusBar();
+                }
+                else               
+                    MessageBox.Show("Value should be a Number.");
+            }
         }
         #endregion
         private void button2_Click(object sender, EventArgs e)
