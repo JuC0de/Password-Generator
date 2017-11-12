@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswortGenerator", "PasswortGenerator.csproj", "{14079ED8-3CEB-4EA3-B54E-C99BB7CAABB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14079ED8-3CEB-4EA3-B54E-C99BB7CAABB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14079ED8-3CEB-4EA3-B54E-C99BB7CAABB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14079ED8-3CEB-4EA3-B54E-C99BB7CAABB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14079ED8-3CEB-4EA3-B54E-C99BB7CAABB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2D424B8-8814-4BBE-8373-6EA81790B1D6}
+	EndGlobalSection
+EndGlobal
