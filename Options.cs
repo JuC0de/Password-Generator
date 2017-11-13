@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PasswordGenerator
 {
     class Options
     {
+        // Write to a file
+        public static string Pfad = Directory.GetCurrentDirectory() + "\\pass.txt";
+        public static List<string> PassList = new List<string>();
+
         // The Lenght of the Generated Password set to Default
         private static int _laenge = 12;
         public static int Laenge

@@ -48,10 +48,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.tb_address = new System.Windows.Forms.TextBox();
+            this.cb_address = new System.Windows.Forms.CheckBox();
+            this.tb_username = new System.Windows.Forms.TextBox();
+            this.cb_username = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -244,6 +244,7 @@
             // tb_zeichen
             // 
             this.tb_zeichen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_zeichen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_zeichen.Location = new System.Drawing.Point(14, 63);
             this.tb_zeichen.Multiline = true;
             this.tb_zeichen.Name = "tb_zeichen";
@@ -280,10 +281,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.checkBox9);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.checkBox8);
+            this.groupBox2.Controls.Add(this.tb_address);
+            this.groupBox2.Controls.Add(this.cb_address);
+            this.groupBox2.Controls.Add(this.tb_username);
+            this.groupBox2.Controls.Add(this.cb_username);
             this.groupBox2.Location = new System.Drawing.Point(14, 37);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(194, 121);
@@ -291,39 +292,47 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
-            // textBox4
+            // tb_address
             // 
-            this.textBox4.Location = new System.Drawing.Point(11, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 20);
-            this.textBox4.TabIndex = 3;
+            this.tb_address.Location = new System.Drawing.Point(11, 89);
+            this.tb_address.Name = "tb_address";
+            this.tb_address.ReadOnly = true;
+            this.tb_address.Size = new System.Drawing.Size(172, 20);
+            this.tb_address.TabIndex = 3;
+            this.tb_address.TextChanged += new System.EventHandler(this.tb_address_TextChanged);
             // 
-            // checkBox9
+            // cb_address
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(11, 68);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(64, 17);
-            this.checkBox9.TabIndex = 2;
-            this.checkBox9.Text = "Address";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.cb_address.AutoSize = true;
+            this.cb_address.Enabled = false;
+            this.cb_address.Location = new System.Drawing.Point(11, 68);
+            this.cb_address.Name = "cb_address";
+            this.cb_address.Size = new System.Drawing.Size(64, 17);
+            this.cb_address.TabIndex = 2;
+            this.cb_address.Text = "Address";
+            this.cb_address.UseVisualStyleBackColor = true;
+            this.cb_address.CheckedChanged += new System.EventHandler(this.cb_address_CheckedChanged);
             // 
-            // textBox3
+            // tb_username
             // 
-            this.textBox3.Location = new System.Drawing.Point(11, 41);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 20);
-            this.textBox3.TabIndex = 1;
+            this.tb_username.Location = new System.Drawing.Point(11, 41);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.ReadOnly = true;
+            this.tb_username.Size = new System.Drawing.Size(172, 20);
+            this.tb_username.TabIndex = 1;
+            this.tb_username.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // checkBox8
+            // cb_username
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(11, 19);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(114, 17);
-            this.checkBox8.TabIndex = 0;
-            this.checkBox8.Text = "Username / E-Mail";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.cb_username.AutoSize = true;
+            this.cb_username.Enabled = false;
+            this.cb_username.Location = new System.Drawing.Point(11, 19);
+            this.cb_username.Name = "cb_username";
+            this.cb_username.Size = new System.Drawing.Size(114, 17);
+            this.cb_username.TabIndex = 0;
+            this.cb_username.Text = "Username / E-Mail";
+            this.cb_username.UseVisualStyleBackColor = true;
+            this.cb_username.CheckedChanged += new System.EventHandler(this.cb_username_CheckedChanged);
             // 
             // checkBox6
             // 
@@ -387,7 +396,6 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -435,10 +443,10 @@
         public System.Windows.Forms.CheckBox checkBox3;
         public System.Windows.Forms.CheckBox checkBox2;
         public System.Windows.Forms.CheckBox checkBox1;
-        public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.CheckBox checkBox9;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.CheckBox checkBox8;
+        public System.Windows.Forms.TextBox tb_address;
+        public System.Windows.Forms.CheckBox cb_address;
+        public System.Windows.Forms.TextBox tb_username;
+        public System.Windows.Forms.CheckBox cb_username;
         public System.Windows.Forms.TabPage tabPage3;
         public System.Windows.Forms.TabPage tabPage1;
     }
