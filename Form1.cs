@@ -35,35 +35,22 @@ namespace PasswordGenerator
                     // Final Generated Password
                     tb_output.Text = Options.CharGenerator(tb_zeichen.Text);
 
-                    // The Statubs Bar
-                    toolStripLabel1.Text = Options.StatusBar();
                 }
                 else
                     MessageBox.Show("Value should be a Number.");
             }
+
             // Save To File CheckBox definition
             if (checkBox5.Checked)
             {
                 if (cb_address.Checked & cb_username.Checked)
-                {
-                    Options.PassList.Add(tb_output.Text + " " + tb_username.Text + " " + tb_address.Text);
-                    File.WriteAllLines(Options.Pfad, Options.PassList);
-                }
+                    Options.AppendToAFile(Options.Pfad, tb_output.Text + " " + tb_username.Text + " " + tb_address.Text);
                 else if (cb_username.Checked)
-                {
-                    Options.PassList.Add(tb_output.Text + " " + tb_username.Text);
-                    File.WriteAllLines(Options.Pfad, Options.PassList);
-                }
+                    Options.AppendToAFile(Options.Pfad, tb_output.Text + " " + tb_username.Text + " " + null);
                 else if (cb_address.Checked)
-                {
-                    Options.PassList.Add(tb_output.Text + " " + tb_address.Text);
-                    File.WriteAllLines(Options.Pfad, Options.PassList);
-                }
+                    Options.AppendToAFile(Options.Pfad, tb_output.Text + " " + null + " " + tb_address.Text);
                 else
-                {
-                    Options.PassList.Add(tb_output.Text);
-                    File.WriteAllLines(Options.Pfad, Options.PassList);
-                }
+                    Options.AppendToAFile(Options.Pfad, tb_output.Text + " " + null + " " + null);
             }
         }
         #endregion
@@ -221,6 +208,18 @@ namespace PasswordGenerator
 
         }
         #endregion
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var view = new PasswordViewer();
+            if (File.Exists(Options.Pfad))
+            {
+                view.toolStripStatusLabel1.Text = Options.Pfad.ToString();
+                view.Show();
+            }
+            else MessageBox.Show("You need to check 'Save to a File' box\nand generate some passwords before\nyou can view anything.");
+
+        }
     }
 }
 

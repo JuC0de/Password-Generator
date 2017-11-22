@@ -58,6 +58,15 @@ namespace PasswordGenerator
             string finalString = new String(stringChars);
             return finalString;
         }
+
+
+        // Method to append text to the existing file with existing text/lines
+        public static void AppendToAFile(string pfad, string output)
+        {
+            PassList.Add(output); // Just to result the use of the AppendLine and not AppendText
+            File.AppendAllLines(pfad, PassList); // Add Line to the Textfile
+            PassList.Remove(output); 
+        }
     }
 }
 
