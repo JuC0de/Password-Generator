@@ -16,13 +16,14 @@ namespace PasswordGenerator
         public Form1()
         {
             InitializeComponent();
+            
         }
         #region Generate Button
-        private void button1_Click(object sender, EventArgs e)
+        public void Generate_Click(object sender, EventArgs e)
         {
             // Clean previous generated Passwords
             GC.Collect();
-
+              
 
             // The Lenght of the Generated Password
             if ((checkBox7.Checked) || (!checkBox7.Checked))
