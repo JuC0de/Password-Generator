@@ -8,34 +8,39 @@
         Title="Password Generator" Height="341" Width="256" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize">
     <Grid Margin="10">
         <Button x:Name="Generate" Content="Generate Password" HorizontalAlignment="Center" Margin="5,259,0,0" VerticalAlignment="Top" Click="Generate_Click" RenderTransformOrigin="0.5,0.5" Height="21" Width="112"/>
+
         <TabControl HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="218" BorderBrush="{x:Null}">
             <TabItem x:Name="Characters" Header="Characters" Height="23" VerticalAlignment="Top" Margin="3,1,-7,-1" BorderBrush="#FFACACAC">
                 <Grid Background="White">
-                    <CheckBox x:Name="cb_Small_Letters" Content="Small Letters" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="cb_Numbers" Content="Numbers" HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="cb_Symbols" Content="Symbols" HorizontalAlignment="Left" Margin="133,30,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="cb_Big_Letters" Content="Big Letters" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tb_Output_Characters" HorizontalAlignment="Left" Height="58" Margin="10,55,0,0" TextWrapping="Wrap" Text="texthier" VerticalAlignment="Top" Width="193"/>
+                    <CheckBox x:Name="cb_Small_Letters" Content="Small Letters" Checked="cb_Small_Letters_Checked" Unchecked="cb_Small_Letters_Checked" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True" />
+                    <CheckBox x:Name="cb_Numbers" IsChecked="True" Content="Numbers" Checked="cb_Numbers_Checked" Unchecked="cb_Numbers_Checked" HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="cb_Symbols" Content="Symbols" Checked="cb_Symbols_Checked" Unchecked="cb_Symbols_Checked" HorizontalAlignment="Left" Margin="133,30,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="cb_Big_Letters" IsChecked="True" Content="Big Letters" Checked="cb_Big_Letters_Checked" Unchecked="cb_Big_Letters_Checked" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tb_Output_Characters" HorizontalAlignment="Left" Height="60" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" TextAlignment="Center" FontSize="11"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Output" Header="Output" Margin="5,1,-9,-1">
                 <Grid Background="White">
-                    <CheckBox x:Name="cb_Save_To_File" Content="Save to a file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="Password_View" Content="View" HorizontalAlignment="Left" Margin="129,93,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5"/>
-                    <TextBox x:Name="tb_Username" HorizontalAlignment="Left" Height="20" Margin="35,33,0,0" TextWrapping="Wrap" Text="Account Name" VerticalAlignment="Top" Width="169" TextAlignment="Center" MaxLength="255" BorderThickness="0,0,0,1" IsReadOnly="True"/>
-                    <TextBox x:Name="tb_Email" HorizontalAlignment="Left" Height="20" Margin="35,63,0,0" TextWrapping="Wrap" Text="E-Mail Address" VerticalAlignment="Top" Width="169" TextAlignment="Center" MaxLength="255" BorderThickness="0,0,0,1" IsReadOnly="True"/>
-                    <CheckBox x:Name="cb_Email" Content="" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="cb_Username" Content="" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="cb_Save_To_File" Checked="cb_Save_To_File_Checked" Unchecked="cb_Save_To_File_Checked" Content="Save to a file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="false"/>
+                    <Button x:Name="Password_View" Click="Password_View_Click" Content="View" HorizontalAlignment="Left" Margin="129,93,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBox x:Name="tb_Username" HorizontalAlignment="Left" Height="20" Margin="35,33,0,0" TextWrapping="Wrap" Text="Account Name" VerticalAlignment="Top" Width="169" TextAlignment="Center" MaxLength="255" BorderThickness="0,0,0,1" IsReadOnly="True" IsEnabled="False"/>
+                    <TextBox x:Name="tb_Email" HorizontalAlignment="Left" Height="20" Margin="35,63,0,0" TextWrapping="Wrap" Text="E-Mail Address" VerticalAlignment="Top" Width="169" TextAlignment="Center" MaxLength="255" BorderThickness="0,0,0,1" IsReadOnly="True" IsEnabled="False"/>
+                    <CheckBox x:Name="cb_Email" Checked="cb_Email_Checked" Unchecked="cb_Email_Checked" Content="" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <CheckBox x:Name="cb_Username" Checked="cb_Username_Checked" Unchecked="cb_Username_Checked" Content="" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" IsEnabled="False"/>
 
                 </Grid>
             </TabItem>
         </TabControl>
-        <Border x:Name="GeneratedPasswordBorder" BorderBrush="#FFACACAC" BorderThickness="0,3,0,1" HorizontalAlignment="Center" Height="67" Margin="5,180,5,0" VerticalAlignment="Top" Width="218" ToolTip="" Tag=""/>
+        <Border BorderBrush="#FFACACAC" BorderThickness="0,3,0,1" HorizontalAlignment="Center" Height="67" Margin="5,180,5,0" VerticalAlignment="Top" Width="218" ToolTip="" Tag=""/>
         <TextBlock x:Name="text_Generated_Password" HorizontalAlignment="Left" Margin="13,161,0,0" TextWrapping="Wrap" Text="Generated Password" VerticalAlignment="Top"/>
-        <Border x:Name="OptionBorder" BorderBrush="#FFACACAC" BorderThickness="0,3,0,1" HorizontalAlignment="Center" Height="127" Margin="5,25,5,0" VerticalAlignment="Top" Width="218" ToolTip="" Tag="" IsHitTestVisible="True"/>
-        <CheckBox x:Name="cb_Password_Lenght" Content="Password Lenght" HorizontalAlignment="Left" Margin="13,192,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_Password_Lenght" HorizontalAlignment="Left" Height="15" Margin="178,191,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="26" TextAlignment="Center" BorderThickness="0,0,0,1" ClipToBounds="True" IsReadOnly="True"/>
-        <TextBox x:Name="tb_Generated_Password" HorizontalAlignment="Left" Height="20" Margin="13,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="191" TextAlignment="Center" BorderThickness="0,0,0,1"/>
+        <Border BorderBrush="#FFACACAC" BorderThickness="0,3,0,1" HorizontalAlignment="Center" Height="127" Margin="5,25,5,0" VerticalAlignment="Top" Width="218" ToolTip="" Tag="" IsHitTestVisible="True"/>
+        <CheckBox x:Name="cb_Password_Length" Checked="cb_Password_Length_Checked" Unchecked="cb_Password_Length_Checked" Content="Password Length" HorizontalAlignment="Left" Margin="13,192,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_Password_Length" HorizontalAlignment="Left" Height="15" Margin="178,191,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="26" TextAlignment="Center" BorderThickness="0,0,0,1" ClipToBounds="True" IsReadOnly="True" IsEnabled="False">
+            <TextBox.ToolTip>
+                <TextBox x:Name="tt_Password_Length" HorizontalAlignment="Center"  Margin="0,0,0,0" Text="Maximum Length is 255 Chars. Default: 12" VerticalAlignment="Top"  TextAlignment="Center" BorderThickness="0,0,0,0" ClipToBounds="True" IsReadOnly="True" Background="{x:Null}"/>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="tb_Generated_Password" HorizontalAlignment="Left" Height="20" Margin="13,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" TextAlignment="Center" BorderThickness="0,0,0,1"/>
 
 
     </Grid>
